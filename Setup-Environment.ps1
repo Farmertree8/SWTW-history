@@ -34,6 +34,8 @@ $ScoopInstalled = Test-CommandExists scoop
 
 $GitInstalled = Test-CommandExists git
 $NodeJSInstalled = Test-CommandExists node
+$ObsidianInstalled = (Test-Path "$env:LOCALAPPDATA\Programs\obsidian\obsidian.exe") -or
+    ($ScoopInstalled -and (Test-Path "$env:SCOOP\apps\obsidian\current\obsidian.exe"))
 
 if (-not $GitInstalled) {
     Install-WithScoop "Git" "git" "[Error] Install Git you dumb: https://git-scm.com/downloads"
@@ -45,6 +47,12 @@ if (-not $NodeJSInstalled) {
     Install-WithScoop "Node.js" "nodejs" "[Error] Install Node.js pls: https://nodejs.org/"
 } else {
     Write-Output "[OK] Node.js installed"
+}
+
+if (-not $ObsidianInstalled) {
+    Install-WithScoop "Obsidian" "obsidian" "[Error] Nah go get Obsidian: https://obsidian.md/"
+} else {
+    Write-Output "[OK] Obsidian installed"
 }
 
 Write-Output "`nYou good good."
