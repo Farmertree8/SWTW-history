@@ -1,3 +1,4 @@
+# 本專案暫時封存
 # 校際交流群編年史SWTW-History專案操作說明
 (for Windows 使用者)
 
