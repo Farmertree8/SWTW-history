@@ -6,21 +6,43 @@ function Test-CommandExists {
     $?
 }
 
+function Install-Scoop {
+    Write-Output "[INFO] Scoop not installed, Installing Scoop"
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+    $ScoopInstalled = $True
+}
+
+function Install-WithScoop {
+    param($Name, $Package, $ErrorMessage)
+    Write-Output "$Name is not installed"
+    $Install = Read-Host "Install with Scoop? (y/N)"
+    if ($Install -eq 'y') {
+        if (-not $ScoopInstalled) {
+            Install-Scoop
+        }
+        scoop install $Package
+    } else {
+        Write-Output $ErrorMessage
+        exit 1
+    }
+}
+
 Write-Output "=== Check ==="
+
+$ScoopInstalled = Test-CommandExists scoop
 
 $GitInstalled = Test-CommandExists git
 $NodeJSInstalled = Test-CommandExists node
 
 if (-not $GitInstalled) {
-    Write-Output "[Error] Install Git you dumb: https://git-scm.com/downloads"
-    exit 1
+    Install-WithScoop "Git" "git" "[Error] Install Git you dumb: https://git-scm.com/downloads"
 } else {
     Write-Output "[OK] Git installed"
 }
 
 if (-not $NodeJSInstalled) {
-    Write-Output "[Error] Install Node.js pls: https://nodejs.org/"
-    exit 1
+    Install-WithScoop "Node.js" "nodejs" "[Error] Install Node.js pls: https://nodejs.org/"
 } else {
     Write-Output "[OK] Node.js installed"
 }
