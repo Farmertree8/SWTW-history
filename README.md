@@ -99,7 +99,7 @@
 - 你擁有一台Window為作業軟體的電腦，至少是win 10/11
 - 你會辨認英文字母，也就是說你看的懂上文
 1. 註冊Github帳號 https://github.com
-2. 點這裡![image](https://hackmd.io/_uploads/HkABcAVlgx.png)
+2. 點 `Sign up for Github`
 3. 依序輸入：電子郵件、密碼(至少包含 15 個字元或至少 8 個字元（包括數字和小寫字母）)、使用者名稱(註冊完要傳給我這個)、您所在的國家
 4. 去電子郵件驗證
 5. 下載 [Git](https://github.com/git-for-windows/git/releases)，全部點過去安裝。
