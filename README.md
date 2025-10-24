@@ -102,7 +102,7 @@
 2. 點這裡![image](https://hackmd.io/_uploads/HkABcAVlgx.png)
 3. 依序輸入：電子郵件、密碼(至少包含 15 個字元或至少 8 個字元（包括數字和小寫字母）)、使用者名稱(註冊完要傳給我這個)、您所在的國家
 4. 去電子郵件驗證
-5. 下載 [Git](https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe)，全部點過去安裝。
+5. 下載 [Git](https://github.com/git-for-windows/git/releases)，全部點過去安裝。
 6. 使用Win+R，打開介面後輸入cmd並輸入`git config --global user.name "你的名稱"`、`git config --global user.email "你的 Email"`，這裡的帳密你剛剛設定完。
 7. 下載 [Node.js](https://nodejs.org/dist/v22.15.0/node-v22.15.0-x64.msi)，全部點過去安裝。
 8. 打開[安裝包](https://github.com/Farmertree8/SWTW-history/releases/download/publish/SWTW-history.v1.0.0.zip)，在你系統"文件"資料夾底下解壓縮並點開`必要套件與環境檢查.bat`，他說你good就是好，不管他字元多崩壞。
